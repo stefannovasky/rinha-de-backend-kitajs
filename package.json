@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "kita build && tsc",
-    "start": "node --enable-source-maps dist/index.js"
+    "start": "node --enable-source-maps dist/index.js --production"
   },
   "repository": {
     "type": "git",
