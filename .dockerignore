@@ -1,0 +1,4 @@
+dist
+node_modules
+./run-load-tests.ps1
+./run-load-tests.sh
