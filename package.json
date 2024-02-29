@@ -1,0 +1,30 @@
+{
+  "name": "rinha-de-backend-kitajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "kita build && tsc",
+    "start": "node --enable-source-maps dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefannovasky/rinha-de-backend-kitajs.git"
+  },
+  "keywords": [],
+  "author": "stefannovasky <stefannovasky@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefannovasky/rinha-de-backend-kitajs/issues"
+  },
+  "homepage": "https://github.com/stefannovasky/rinha-de-backend-kitajs#readme",
+  "devDependencies": {
+    "@kitajs/cli": "^1.1.29",
+    "@kitajs/ts-plugin": "^1.1.21",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@kitajs/runtime": "^1.1.16",
+    "fastify": "^4.26.1"
+  }
+}
