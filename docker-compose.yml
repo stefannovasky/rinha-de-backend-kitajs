@@ -7,7 +7,10 @@ services:
     hostname: api-1
     container_name: rinha-api-1
     environment:
-      - POSTGRESQL_CONNECTION_STRING=Host=postgres-db;Username=root;Password=root;Database=rinha-db;MaxPoolSize=30;MinPoolSize=5;Connection Pruning Interval=1;Connection Idle Lifetime=2;Enlist=false;No Reset On Close=true;Pooling=true
+      - PG_HOST=postgres-db
+      - PG_USER=root
+      - PG_PASSWORD=root
+      - PG_DB=rinha-db
     deploy:
       resources:
         limits:
@@ -25,7 +28,10 @@ services:
     hostname: api-2
     container_name: rinha-api-2
     environment:
-      - POSTGRESQL_CONNECTION_STRING=Host=postgres-db;Username=root;Password=root;Database=rinha-db;MaxPoolSize=30;MinPoolSize=5;Connection Pruning Interval=1;Connection Idle Lifetime=2;Enlist=false;No Reset On Close=true;Pooling=true
+      - PG_HOST=postgres-db
+      - PG_USER=root
+      - PG_PASSWORD=root
+      - PG_DB=rinha-db
     deploy:
       resources:
         limits:

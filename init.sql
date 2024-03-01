@@ -12,7 +12,7 @@ CREATE UNLOGGED TABLE transactions (
 	"description" VARCHAR(10) NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 	CONSTRAINT fk_transactions_customer_id
-		FOREIGN KEY (customer_id) REFERENCES customer(id)
+		FOREIGN KEY (customer_id) REFERENCES customers(id)
 );
 
 CREATE INDEX ix_transactions_customer_id_created_at ON transactions (customer_id, created_at DESC);
@@ -40,7 +40,7 @@ BEGIN
 	RETURN QUERY
 	UPDATE customers
 	SET balance = customer_balance
-	WHERE id = cliente_id
+	WHERE id = customer_id
 	RETURNING balance;
 END;
 $BODY$;
@@ -61,9 +61,9 @@ BEGIN
 END;
 $BODY$;
 
-INSERT INTO customers (""limit) values
-	('eh', 1000 * 100),
-	('os', 800 * 100),
-	('guri', 10000 * 100),
-	('nao tem', 100000 * 100),
-	('jeito', 5000 * 100);
+INSERT INTO customers (id, "limit") values
+	(1, 1000 * 100),
+	(2, 800 * 100),
+	(3, 10000 * 100),
+	(4, 100000 * 100),
+	(5, 5000 * 100);
