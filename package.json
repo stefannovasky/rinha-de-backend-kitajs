@@ -24,7 +24,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@fastify/sensible": "^5.5.0",
     "@kitajs/runtime": "^1.1.16",
-    "fastify": "^4.26.1"
+    "fastify": "^4.26.1",
+    "postgres": "^3.4.3"
   }
 }
