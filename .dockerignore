@@ -2,3 +2,6 @@ dist
 node_modules
 ./run-load-tests.ps1
 ./run-load-tests.sh
+misc
+README.md
+load-test

@@ -19,6 +19,8 @@ services:
     depends_on:
       postgres-db:
         condition: service_healthy
+    ports:
+      - "3001:3000"
     networks:
       - rinha-network
 
@@ -41,7 +43,7 @@ services:
       postgres-db:
         condition: service_healthy
     ports:
-      - "8082:8080"
+      - "3002:3000"
     networks:
       - rinha-network
 
@@ -89,4 +91,4 @@ services:
 
 networks:
   rinha-network:
-    driver: host
+    driver: bridge
