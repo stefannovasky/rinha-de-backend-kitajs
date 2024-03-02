@@ -15,7 +15,7 @@ services:
       resources:
         limits:
           cpus: "0.35"
-          memory: "80MB"
+          memory: "100MB"
     depends_on:
       postgres-db:
         condition: service_healthy
@@ -36,7 +36,7 @@ services:
       resources:
         limits:
           cpus: "0.35"
-          memory: "80MB"
+          memory: "100MB"
     depends_on:
       postgres-db:
         condition: service_healthy
@@ -58,7 +58,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "30MB"
+          memory: "50MB"
     networks:
       - rinha-network
 
@@ -69,7 +69,7 @@ services:
       resources:
         limits:
           cpus: "0.6"
-          memory: "360MB"
+          memory: "300MB"
     ports:
       - "5432:5432"
     volumes:
