@@ -18,7 +18,7 @@ app.addHook("onReady", done => {
     });
 });
 
-// TODO: why does it only work on docker when set host 0.0.0.0?
+// TODO: why does it only work on docker when the host is set to 0.0.0.0?
 app.listen({ port: 3000, host: "0.0.0.0" }).then((address) => {
   console.log(`Server listening on ${address}`);
 });

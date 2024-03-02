@@ -27,7 +27,7 @@ export async function post(
     throw errors.unprocessableEntity();
   }
 
-  // TODO: find a way to pass "debit"/"credit" as a string parameter
+  // TODO: find a way to pass the value 'debit'/'credit' as a string parameter.
   const trxResult = type === "c"
     ? await sql<Balance[]>`SELECT credit as balance FROM credit(${id}, ${value}, ${description});`
     : await sql<Balance[]>`SELECT debit as balance FROM debit(${id}, ${value}, ${description});`;
