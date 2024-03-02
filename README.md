@@ -8,7 +8,7 @@ o objetivo é desenvolver a API mais rápida possível durante os quatro minutos
 
 - Nginx
 - PostgreSQL
-- Node.js (KitaJS + Fastify como framework HTTP)
+- Node.js ([KitaJS](https://kita.js.org/) + Fastify como framework HTTP)
 
 # Resultado
 
