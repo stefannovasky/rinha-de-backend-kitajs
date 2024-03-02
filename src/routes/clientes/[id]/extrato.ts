@@ -11,18 +11,15 @@ export async function get(id: Path<number>, errors: HttpErrors) {
     throw errors.notFound();
   }
 
-  const customerBalance = await sql<{ balance: number }[]>
-    `SELECT balance FROM customers WHERE id = ${id}`;
-  if (!customerBalance.length) {
-    throw errors.unprocessableEntity();
-  }
-
-  const customerTransactions = await sql<Transaction[]>
-    `SELECT value, "type", "description", created_at
-    FROM transactions
-    WHERE customer_id = ${id}
-    ORDER BY created_at DESC
-    LIMIT 10`;
+  const [customerBalance, transactions] = await Promise.all([
+    sql<{ balance: number }[]>`SELECT balance FROM customers WHERE id = ${id}`,
+    sql<Transaction[]>
+      `SELECT value, "type", "description", created_at
+      FROM transactions
+      WHERE customer_id = ${id}
+      ORDER BY created_at DESC
+      LIMIT 10`,
+  ]);
 
   return {
     saldo: {
@@ -30,7 +27,7 @@ export async function get(id: Path<number>, errors: HttpErrors) {
       data_extrato: new Date(),
       limite: customer.limit,
     },
-    ultimas_transacoes: customerTransactions.map(({ value, type, description, created_at }) =>
+    ultimas_transacoes: transactions.map(({ value, type, description, created_at }) =>
       ({ valor: value, tipo: type, descricao: description, realizada_em: created_at }))
   };
 }
